@@ -11,10 +11,8 @@ class DollarTest {
     @DisplayName("더하기 테스트")
     void testMultiplication() {
         Dollar product = new Dollar(5);
-        Dollar resultTen = product.times(2);
-        assertEquals(10, resultTen.amount);
-        Dollar resultFifteen = product.times(3);
-        assertEquals(15, resultFifteen.amount);
+        assertEquals(new Dollar(10), product.times(2));
+        assertEquals(new Dollar(15), product.times(3));
     }
 
     @Test
