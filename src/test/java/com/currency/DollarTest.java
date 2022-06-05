@@ -10,9 +10,9 @@ class DollarTest {
     @Test
     @DisplayName("더하기 테스트")
     void testMultiplication() {
-        Dollar product = new Dollar(5);
-        assertEquals(new Dollar(10), product.times(2));
-        assertEquals(new Dollar(15), product.times(3));
+        Money five = Money.dollar(5);
+        assertEquals(new Dollar(10), five.times(2));
+        assertEquals(new Dollar(15), five.times(3));
     }
 
     @Test
