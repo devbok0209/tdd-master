@@ -3,6 +3,7 @@ package com.currency;
 public class Dollar extends Money {
     public Dollar(int amount) {
         this.amount = amount;
+        currency = "USD";
     }
 
     public Dollar times(int multiplier) {
@@ -11,6 +12,6 @@ public class Dollar extends Money {
 
     @Override
     String currency() {
-        return "USD";
+        return currency;
     }
 }
