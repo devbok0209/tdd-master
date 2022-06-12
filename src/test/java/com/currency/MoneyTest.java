@@ -3,8 +3,7 @@ package com.currency;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class MoneyTest {
 
@@ -16,5 +15,12 @@ class MoneyTest {
         assertTrue(Money.franc(5).equals(Money.franc(5)));
         assertFalse(Money.franc(5).equals(Money.franc(6)));
         assertFalse(Money.franc(5).equals(Money.dollar(6)));
+    }
+
+    @Test
+    @DisplayName("통화 테스트")
+    void testCurrency() {
+        assertEquals("USD", Money.dollar(1).currency());
+        assertEquals("USD", Money.franc(1).currency());
     }
 }
