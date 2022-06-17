@@ -31,4 +31,14 @@ class MoneyTest {
         Money reduced = bank.reduce(sum, "USD");
         assertEquals(Money.dollar(10), reduced);
     }
+
+    @Test
+    @DisplayName("더하기는 Sum.class를 리턴해야한다.")
+    void testPlusReturnSum() {
+        Money five = Money.dollar(5);
+        Expression sum = five.plus(five);
+        Sum sum = (Sum) result;
+        assertEquals(five, sum.augend);
+        assertEquals(five, sum.addend);
+    }
 }
