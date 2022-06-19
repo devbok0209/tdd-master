@@ -69,8 +69,8 @@ class MoneyTest {
     }
 
     @Test
-    @DisplayName("배열의 동치성 검사")
-    void testArrayEquals() {
-        assertEquals(new Object[]{"abc"}, new Object[]{"abc"});
+    @DisplayName("USD 환율은 1이어야한다.")
+    void testIdentityRate() {
+        assertEquals(1, new Bank().rate("USD", "USD"));
     }
 }
