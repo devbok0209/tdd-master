@@ -97,4 +97,16 @@ class MoneyTest {
         Money result = bank.reduce(sum, "USD");
         assertEquals(Money.dollar(15), result);
     }
+
+    @Test
+    @DisplayName("Sum.times()에 대한 테스틐 코드")
+    void testSumTimes() {
+        Expression fiveBucks = Money.dollar(5);
+        Expression tenFrancs = Money.franc(10);
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        Expression sum = new Sum(fiveBucks, tenFrancs).times(2);
+        Money result = bank.reduce(sum, "USD");
+        assertEquals(Money.dollar(20), result);
+    }
 }
