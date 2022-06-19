@@ -109,4 +109,11 @@ class MoneyTest {
         Money result = bank.reduce(sum, "USD");
         assertEquals(Money.dollar(20), result);
     }
+
+    @Test
+    @DisplayName("$5 + $5 = Money 반환 테스트")
+    void testPlusSameCurrencyReturnsMoney() {
+        Expression sum = Money.dollar(1).plus(Money.dollar(1));
+        assertTrue(sum instanceof Money);
+    }
 }
