@@ -67,4 +67,10 @@ class MoneyTest {
         Money result = bank.reduce(Money.franc(2), "USD");
         assertEquals(Money.dollar(1), result);
     }
+
+    @Test
+    @DisplayName("배열의 동치성 검사")
+    void testArrayEquals() {
+        assertEquals(new Object[]{"abc"}, new Object[]{"abc"});
+    }
 }

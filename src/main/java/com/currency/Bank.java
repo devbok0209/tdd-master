@@ -9,7 +9,7 @@ public class Bank {
     }
 
     public Money reduce(Expression source, String to) {
-        return source.reduce(to);
+        return source.reduce((Bank) source, to);
     }
 
     public void addRate(String chf, String usd, int i) {
