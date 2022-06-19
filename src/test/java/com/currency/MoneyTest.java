@@ -77,8 +77,8 @@ class MoneyTest {
     @Test
     @DisplayName("$5 + 10CHF = $10 테스트")
     void testMixedAddition() {
-        Expression fiveBucks = Money.dollar(5);
-        Expression tenFrancs = Money.franc(10);
+        Money fiveBucks = Money.dollar(5);
+        Money tenFrancs = Money.franc(10);
         Bank bank = new Bank();
         bank.addRate("CHF", "USD", 2);
         Money result = bank.reduce(
